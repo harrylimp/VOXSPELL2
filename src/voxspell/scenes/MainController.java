@@ -9,11 +9,14 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import voxspell.engine.DataIO;
 import voxspell.engine.Festival;
 import voxspell.engine.LevelData;
 import voxspell.engine.SceneManager;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -64,6 +67,8 @@ public class MainController implements Initializable {
     private Button viewStatsButton;
     @FXML
     private Button unlockAllButton;
+    @FXML
+    private Button changeListButton;
 
     /**
      * parse button text into level number
@@ -156,6 +161,17 @@ public class MainController implements Initializable {
         }
     }
 
+    class fileHandler implements EventHandler<ActionEvent> {
+        public void handle(ActionEvent event) {
+            final FileChooser fileChooser = new FileChooser();
+            Stage stage = (Stage)changeListButton.getScene().getWindow();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text File", "*.txt"));
+            File file = fileChooser.showOpenDialog(stage);
+            String chosenFile = file.getName();
+            LevelData.setWordlist(chosenFile);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         vBox.setBackground(SceneManager.makeBackground());
@@ -206,6 +222,8 @@ public class MainController implements Initializable {
 
         defaultVoice.setOnAction(voiceMenuButtonHandler);
         nzVoice.setOnAction(voiceMenuButtonHandler);
+
+        changeListButton.setOnAction(new fileHandler());
     }
 
     private void disable(int maxLevel) {
