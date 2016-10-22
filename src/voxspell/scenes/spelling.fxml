@@ -14,7 +14,12 @@
          <children>
             <HBox fx:id="hBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fx:id="levelLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Level #" wrappingWidth="434.16015625" HBox.hgrow="ALWAYS">
+                  <Button fx:id="mainMenuButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Main Menu">
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Text fx:id="levelLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Level #" wrappingWidth="336.16015625" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
                      </font>

@@ -4,7 +4,10 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -14,9 +17,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import voxspell.Voxspell;
 import voxspell.engine.*;
 import voxspell.engine.Festival.Operations;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -49,6 +55,8 @@ public class SpellingController implements Initializable {
     private Label outOfLabel;
     @FXML
     private VBox vBox;
+    @FXML
+    private Button mainMenuButton;
 
 
     // plug in engine modules
@@ -111,6 +119,14 @@ public class SpellingController implements Initializable {
         }
     }
 
+    class backToMenuHandler implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            popUp();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialize words and level label using levelData
@@ -148,6 +164,25 @@ public class SpellingController implements Initializable {
         // start quiz
         listenAgainButton.setDisable(false);
         readWord(currentWord);
+
+        // making a new stage
+        mainMenuButton.setOnAction(new backToMenuHandler());
+    }
+
+    public void popUp() {
+        Stage stage;
+        Parent root = null;
+        stage = new Stage();
+
+        try {
+            root = FXMLLoader.load(Voxspell.class.getResource("scenes/" + "warning.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     private void readWord(Word word) {

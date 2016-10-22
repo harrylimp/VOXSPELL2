@@ -9,8 +9,11 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import voxspell.engine.DataIO;
 import voxspell.engine.Festival;
 import voxspell.engine.LevelData;
@@ -224,6 +227,17 @@ public class MainController implements Initializable {
         nzVoice.setOnAction(voiceMenuButtonHandler);
 
         changeListButton.setOnAction(new fileHandler());
+
+        File file = new File("./lib/song.mp3");
+        Media musicFile = new Media(file.toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(musicFile);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setVolume(0.10);
+        mediaPlayer.setOnEndOfMedia(new Runnable() {
+            public void run() { mediaPlayer.seek(Duration.ZERO); }
+        });
+        mediaPlayer.onRepeatProperty();
+
     }
 
     private void disable(int maxLevel) {
