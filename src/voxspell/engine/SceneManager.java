@@ -32,6 +32,14 @@ public class SceneManager {
         return background;
     }
 
+    public static Background makeBeeBackground() {
+        Image image = new Image(Voxspell.class.getResource("scenes/assets/bee.jpeg").toExternalForm());
+        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
+        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+        Background background = new Background(backgroundImage);
+        return background;
+    }
+
     public static Background makePopBackground() {
         Image image = new Image(Voxspell.class.getResource("scenes/assets/allGrass.jpeg").toExternalForm());
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
