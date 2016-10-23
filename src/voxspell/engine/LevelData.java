@@ -18,6 +18,8 @@ public class LevelData {
     private static String voice = data.getVoice();
     private static String wordlist = "NZCER-spelling-lists.txt";
     private static boolean isReview = false;
+    private static boolean isReset = false;
+    private static boolean isEnable = false;
 
     /**
      * set currentWordList
@@ -101,5 +103,21 @@ public class LevelData {
 
     public static void setIsReview(boolean isReview) {
         LevelData.isReview = isReview;
+    }
+
+    public static boolean isReset() {
+        return isReset;
+    }
+
+    public static void setIsReset(boolean isReset) {
+        LevelData.isReset = isReset;
+    }
+
+    public static boolean isEnable() {
+        return isEnable;
+    }
+
+    public static void setIsEnable(boolean isReset) {
+        LevelData.isEnable = isReset;
     }
 }

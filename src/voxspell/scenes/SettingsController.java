@@ -50,6 +50,8 @@ public class SettingsController implements Initializable {
     private Button unlockAllButton;
     @FXML
     private Button changeListButton;
+    @FXML
+    private Button menuButton;
 
     /**
      * voice MenuButton handler for voice changing
@@ -75,36 +77,24 @@ public class SettingsController implements Initializable {
     }
 
     /**
-     * onHover handler for button styling
-     */
-    class hoverHandler implements EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            ((Button)event.getSource()).setStyle(BASE + ON_HOVER);
-        }
-    }
-
-    /**
-     * onExit handler for button styling
-     */
-    class exitHandler implements EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            ((Button)event.getSource()).setStyle(BASE + ON_EXIT);
-        }
-    }
-
-    /**
      * handler for resetting labels
      */
     class resetHandler implements EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
             data.delete();
-            disable(1); // disable all levels except the first
+            LevelData.setIsReset(true);
         }
     }
 
     class enableAllHandler implements EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
-            enableAll();
+            LevelData.setIsEnable(true);
+        }
+    }
+
+    class menuHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            SceneManager.goTo("main.fxml");
         }
     }
 
@@ -123,14 +113,14 @@ public class SettingsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         vBox.setBackground(SceneManager.makePopBackground());
         // create listeners
-        EventHandler<MouseEvent> hoverHandler = new hoverHandler();
-        EventHandler<MouseEvent> exitHandler = new exitHandler();
         EventHandler<MouseEvent> resetHandler = new resetHandler();
         EventHandler<MouseEvent> enableAllHandler = new enableAllHandler();
+        EventHandler<MouseEvent> menuHandler = new menuHandler();
 
         // initialise buttons
         resetButton.setOnMouseClicked(resetHandler);
         unlockAllButton.setOnMouseClicked(enableAllHandler);
+        menuButton.setOnMouseClicked(menuHandler);
 
         // initialise voice menu
         voiceMenuButton.setText("Change voice");
@@ -146,17 +136,5 @@ public class SettingsController implements Initializable {
 
         changeListButton.setOnAction(new fileHandler());
 
-    }
-
-    private void disable(int maxLevel) {
-        for (int i = 9; i > maxLevel - 1; i--) {
-            buttons.get(i).setDisable(true);
-        }
-    }
-
-    private void enableAll() {
-        for (int i = 0; i < 10; i++) {
-            buttons.get(i).setDisable(false);
-        }
     }
 }

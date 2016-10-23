@@ -159,6 +159,7 @@
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="25.0" prefWidth="600.0">
          <children>
+            <Button fx:id="gameButton" mnemonicParsing="false" text="BEE" />
             <Button fx:id="settingsButton" mnemonicParsing="false" text="Button" />
             <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: rgba(211,64,1,0.4);" text="Unlock all levels">
                <cursor>

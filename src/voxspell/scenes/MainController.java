@@ -80,6 +80,8 @@ public class MainController implements Initializable {
     private Button changeListButton;
     @FXML
     private Button settingsButton;
+    @FXML
+    private Button gameButton;
 
     /**
      * parse button text into level number
@@ -174,7 +176,14 @@ public class MainController implements Initializable {
 
     class enableSettingsHandler implements  EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
-            popUp();
+            //popUp();
+            SceneManager.goTo("settings.fxml");
+        }
+    }
+
+    class gameHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            SceneManager.goTo("game.fxml");
         }
     }
 
@@ -196,9 +205,9 @@ public class MainController implements Initializable {
         EventHandler<MouseEvent> levelSelectionHandler = new levelSelect();
         EventHandler<MouseEvent> hoverHandler = new hoverHandler();
         EventHandler<MouseEvent> exitHandler = new exitHandler();
-        EventHandler<MouseEvent> resetHandler = new resetHandler();
+        //EventHandler<MouseEvent> resetHandler = new resetHandler();
         EventHandler<MouseEvent> statsSelectHandler = new statsSelectHandler();
-        EventHandler<MouseEvent> enableAllHandler = new enableAllHandler();
+        //EventHandler<MouseEvent> enableAllHandler = new enableAllHandler();
 
         // add buttons to list, then iterate through list assigning listeners
         buttons.add(level1);
@@ -219,14 +228,23 @@ public class MainController implements Initializable {
             button.setOnMouseExited(exitHandler);
         }
 
+        if (LevelData.isReset()) {
+            disable(1);
+            LevelData.setIsReset(false);
+        }
+        if (LevelData.isEnable()) {
+            enableAll();
+            LevelData.setIsEnable(false);
+        }
+
         // initialise buttons
-        resetButton.setOnMouseClicked(resetHandler);
+        //resetButton.setOnMouseClicked(resetHandler);
         viewStatsButton.setOnMouseClicked(statsSelectHandler);
-        unlockAllButton.setOnMouseClicked(enableAllHandler);
+        //unlockAllButton.setOnMouseClicked(enableAllHandler);
 
 
         // disable locked levels
-        disable(data.highestLevelEnabled());
+        //disable(data.highestLevelEnabled());
 
         // initialise voice menu
         voiceMenuButton.setText("Change voice");
@@ -247,7 +265,7 @@ public class MainController implements Initializable {
         Media musicFile = new Media(file.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(musicFile);
         mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setVolume(0.90);
+        mediaPlayer.setVolume(0.05);
         mediaPlayer.setOnEndOfMedia(new Runnable() {
             public void run() { mediaPlayer.seek(Duration.ZERO); }
         });
@@ -256,9 +274,12 @@ public class MainController implements Initializable {
         // enable settings button
         settingsButton.setOnMouseClicked(new enableSettingsHandler());
 
+        // enable game button
+        gameButton.setOnMouseClicked(new gameHandler());
+
     }
 
-    public void popUp() {
+    /*public void popUp() {
         Stage stage;
         Parent root = null;
         stage = new Stage();
@@ -272,15 +293,15 @@ public class MainController implements Initializable {
         stage.setScene(scene);
         stage.show();
 
-    }
+    }*/
 
-    private void disable(int maxLevel) {
+    public void disable(int maxLevel) {
         for (int i = 9; i > maxLevel - 1; i--) {
             buttons.get(i).setDisable(true);
         }
     }
 
-    private void enableAll() {
+    public void enableAll() {
         for (int i = 0; i < 10; i++) {
             buttons.get(i).setDisable(false);
         }
