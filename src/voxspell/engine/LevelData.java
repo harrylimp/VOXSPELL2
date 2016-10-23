@@ -20,6 +20,7 @@ public class LevelData {
     private static boolean isReview = false;
     private static boolean isReset = false;
     private static boolean isEnable = false;
+    private static boolean musicPlay = true;
 
     /**
      * set currentWordList
@@ -119,5 +120,13 @@ public class LevelData {
 
     public static void setIsEnable(boolean isReset) {
         LevelData.isEnable = isReset;
+    }
+
+    public static boolean isMusicPlay() {
+        return musicPlay;
+    }
+
+    public static void setMusicPlay(boolean music) {
+        musicPlay = music;
     }
 }

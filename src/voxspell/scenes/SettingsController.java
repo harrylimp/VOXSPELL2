@@ -28,13 +28,9 @@ import java.util.ResourceBundle;
  * MainController class for the application entry / level selection screen (main.fxml)
  */
 public class SettingsController implements Initializable {
-    private static final String BASE = "-fx-border-color: rgb(31,65,9); -fx-border-width: 5px; -fx-border-radius: 1px; -fx-background-color: #b6e7c9; ";
-    private static final String ON_HOVER = "-fx-background-color: #83B496;";
-    private static final String ON_EXIT = "-fx-background-color: #b6e7c9;";
 
     private static final String NZ_VOICE_CHOICE = "NZ Voice";
     private static final String DEFAULT_VOICE_CHOICE = "Default Voice";
-    private ArrayList<Button> buttons = new ArrayList<Button>();
 
     // data IO
     DataIO data = new DataIO();
@@ -83,12 +79,14 @@ public class SettingsController implements Initializable {
         public void handle(MouseEvent event) {
             data.delete();
             LevelData.setIsReset(true);
+            LevelData.setIsEnable(false);
         }
     }
 
     class enableAllHandler implements EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
             LevelData.setIsEnable(true);
+            LevelData.setIsReset(false);
         }
     }
 
@@ -111,7 +109,9 @@ public class SettingsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        vBox.setBackground(SceneManager.makePopBackground());
+
+        vBox.setBackground(SceneManager.makeBackground());
+
         // create listeners
         EventHandler<MouseEvent> resetHandler = new resetHandler();
         EventHandler<MouseEvent> enableAllHandler = new enableAllHandler();

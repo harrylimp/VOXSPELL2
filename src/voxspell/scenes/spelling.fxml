@@ -19,7 +19,7 @@
                         <Insets left="7.0" />
                      </HBox.margin>
                   </Button>
-                  <Text fx:id="levelLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Level #" wrappingWidth="336.16015625" HBox.hgrow="ALWAYS">
+                  <Text fx:id="levelLabel" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: rgba(255,255,255,0.7);" text="Level #" wrappingWidth="336.16015625" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
                      </font>

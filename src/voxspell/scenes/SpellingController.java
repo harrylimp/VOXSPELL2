@@ -217,11 +217,13 @@ public class SpellingController implements Initializable {
                 currentWord.incrementMastered();
                 output("Correct");
                 incrementLabel(rightLabel);
+                Game.addPoints(5*LevelData.getLevel());
                 nextWord();
             } else if (correct && currentFaulted) {
                 currentWord.incrementFaulted();
                 output("That's right!");
                 currentFaulted = false;
+                Game.addPoints(2*LevelData.getLevel());
                 nextWord();
             } else if (!correct && !currentFaulted) {
                 currentFaulted = true;

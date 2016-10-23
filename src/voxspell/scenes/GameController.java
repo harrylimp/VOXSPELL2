@@ -3,7 +3,9 @@ package voxspell.scenes;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import voxspell.engine.Game;
@@ -21,6 +23,8 @@ public class GameController implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private Button menuButton;
     @FXML
     private Button button1;
     @FXML
@@ -71,6 +75,8 @@ public class GameController implements Initializable {
     private Button button24;
     @FXML
     private Button button25;
+    @FXML
+    private Label pointLabel;
 
     ArrayList<Button> buttons = new ArrayList<>();
 
@@ -78,8 +84,18 @@ public class GameController implements Initializable {
         public void handle(MouseEvent event) {
             if (Game.canBuy()) {
                 Game.buyButton();
-                // MAKE TRANSPARENT
+                Button button = (Button)event.getSource();
+                button.setVisible(false);
             }
+            pointLabel.setText("Points Available: " + Game.getPoints());
+        }
+    }
+
+    class exitHandler implements EventHandler<MouseEvent> {
+
+        @Override
+        public void handle(MouseEvent event) {
+            SceneManager.goTo("main.fxml");
         }
     }
 
@@ -119,5 +135,7 @@ public class GameController implements Initializable {
             button.setOnMouseClicked(new buttonRemoved());
         }
 
+        pointLabel.setText("Points Available: " + Game.getPoints());
+        menuButton.setOnMouseClicked(new exitHandler());
     }
 }

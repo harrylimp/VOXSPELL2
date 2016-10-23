@@ -5,7 +5,7 @@ package voxspell.engine;
  */
 public class Game {
 
-    public static int points;
+    private static int points;
 
     public Game() {
         points = 0;
@@ -25,6 +25,10 @@ public class Game {
 
     public static void addPoints(int _points) {
         points += _points;
+    }
+
+    public static int getPoints() {
+        return points;
     }
 
 }

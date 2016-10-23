@@ -25,7 +25,7 @@
         </HBox>
       <Button fx:id="changeListButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="153.0" text="Change Spelling List" textAlignment="CENTER">
          <VBox.margin>
-            <Insets bottom="40.0" left="100.0" top="30.0" />
+            <Insets bottom="30.0" left="225.0" top="30.0" />
          </VBox.margin>
       </Button>
       <MenuButton fx:id="voiceMenuButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="MenuButton">
@@ -34,7 +34,7 @@
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
          <VBox.margin>
-            <Insets bottom="40.0" left="100.0" />
+            <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </MenuButton>
       <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ff2525;" text="Reset levels">
@@ -42,7 +42,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <VBox.margin>
-            <Insets bottom="40.0" left="100.0" />
+            <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </Button>
       <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: rgba(211,64,1,0.4);" text="Unlock all levels">
@@ -50,9 +50,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <VBox.margin>
-            <Insets left="100.0" />
+            <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="menuButton" mnemonicParsing="false" text="Button" />
+      <Button fx:id="menuButton" minHeight="30.0" minWidth="153.0" mnemonicParsing="false" text="Main Menu">
+         <VBox.margin>
+            <Insets left="225.0" />
+         </VBox.margin></Button>
     </children>
 </VBox>
