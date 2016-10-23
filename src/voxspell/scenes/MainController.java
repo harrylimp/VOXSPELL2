@@ -3,7 +3,10 @@ package voxspell.scenes;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -14,12 +17,15 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import voxspell.Voxspell;
 import voxspell.engine.DataIO;
 import voxspell.engine.Festival;
 import voxspell.engine.LevelData;
 import voxspell.engine.SceneManager;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -72,6 +78,8 @@ public class MainController implements Initializable {
     private Button unlockAllButton;
     @FXML
     private Button changeListButton;
+    @FXML
+    private Button settingsButton;
 
     /**
      * parse button text into level number
@@ -164,6 +172,12 @@ public class MainController implements Initializable {
         }
     }
 
+    class enableSettingsHandler implements  EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            popUp();
+        }
+    }
+
     class fileHandler implements EventHandler<ActionEvent> {
         public void handle(ActionEvent event) {
             final FileChooser fileChooser = new FileChooser();
@@ -228,15 +242,35 @@ public class MainController implements Initializable {
 
         changeListButton.setOnAction(new fileHandler());
 
+        // enable background music
         File file = new File("./lib/song.mp3");
         Media musicFile = new Media(file.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(musicFile);
         mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setVolume(0.10);
+        mediaPlayer.setVolume(0.90);
         mediaPlayer.setOnEndOfMedia(new Runnable() {
             public void run() { mediaPlayer.seek(Duration.ZERO); }
         });
         mediaPlayer.onRepeatProperty();
+
+        // enable settings button
+        settingsButton.setOnMouseClicked(new enableSettingsHandler());
+
+    }
+
+    public void popUp() {
+        Stage stage;
+        Parent root = null;
+        stage = new Stage();
+
+        try {
+            root = FXMLLoader.load(Voxspell.class.getResource("scenes/" + "settings.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

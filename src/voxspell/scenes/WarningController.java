@@ -3,9 +3,11 @@ package voxspell.scenes;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import voxspell.engine.SceneManager;
 
@@ -23,13 +25,16 @@ public class WarningController implements Initializable {
     private Button noButton;
     @FXML
     private Label warningLabel;
+    @FXML
+    private VBox vBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        vBox.setBackground(SceneManager.makePopBackground());
         noButton.setOnMouseClicked(new spellingHandler());
         yesButton.setOnMouseClicked(new menuHandler());
-        warningLabel.setText("Are you sure you want to Exit? \n ALl progress will be lost?");
+        warningLabel.setText("Are you sure?");
 
     }
 

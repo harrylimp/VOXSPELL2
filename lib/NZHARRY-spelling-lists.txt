@@ -1,0 +1,77 @@
+%Level 1
+Liverpool
+Manchester
+Chelsea
+Arsenal
+London
+Leceister
+Swansea
+West
+East
+Spurs
+City
+Everton
+%Level 2
+Nottingham
+Sheffield
+United
+Southampton
+James
+Lebron
+Tony
+Parker
+Timothy
+Duncan
+Manuel
+Ginobili
+%Level 3
+Philippe
+Coutinho
+Roberto
+Firmino
+Daniel
+Sturridge
+Divock
+Origi
+Sadio
+Mane
+Adam
+Lallana
+Simon
+Mignolet
+%Level 4
+Lloris
+Karius
+Nathaniel
+Clyne
+Dejan
+Lovren
+Kolo
+Toure
+Joel
+Matip
+Ragnar
+Klavan
+Alberto
+Moreno
+Milner
+%Level 5
+Jordon
+Henderson
+Lucas
+Leiva
+Emre
+Can
+Who
+Joe
+Allen
+Welsh
+Xavi
+Zlatan
+Wjnaldum
+%Level 6
+%Level 7
+%Level 8
+%Level 9
+%Level 10
+%Level 11

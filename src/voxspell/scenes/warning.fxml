@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.chart.*?>
@@ -13,13 +14,16 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="voxspell.scenes.WarningController">
    <children>
-      <VBox prefHeight="150.0" prefWidth="200.0">
+      <VBox fx:id="vBox" prefHeight="150.0" prefWidth="200.0" style=": ;">
          <children>
-            <Label fx:id="warningLabel" prefHeight="91.0" prefWidth="222.0" />
-            <HBox prefHeight="26.0" prefWidth="200.0">
+            <Label fx:id="warningLabel" prefHeight="91.0" prefWidth="222.0" textAlignment="CENTER" />
+            <HBox prefHeight="42.0" prefWidth="194.0">
                <children>
-                  <Button fx:id="yesButton" mnemonicParsing="false" text="YES" />
-                  <Button fx:id="noButton" mnemonicParsing="false" text="NO" />
+                  <Button fx:id="yesButton" mnemonicParsing="false" prefHeight="56.0" prefWidth="53.0" style="-fx-background-color: #ffff00; -fx-border-color: #000000; -fx-border-width: 2px;" text="YES" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="20.0" right="50.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="noButton" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" style="-fx-background-color: #ffff00; -fx-border-color: #000000; -fx-border-width: 2px;" text="NO" />
                </children>
             </HBox>
          </children>
