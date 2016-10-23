@@ -12,14 +12,14 @@
    <children>
       <VBox fx:id="vBox" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
          <children>
-            <HBox fx:id="hBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox fx:id="hBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.8);">
                <children>
-                  <Button fx:id="mainMenuButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Main Menu">
+                  <Button fx:id="mainMenuButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" style="-fx-background-color: #b6e7c9; -fx-border-color: #000000; -fx-border-width: 3px;" text="Main Menu">
                      <HBox.margin>
-                        <Insets left="7.0" />
+                        <Insets left="8.0" />
                      </HBox.margin>
                   </Button>
-                  <Text fx:id="levelLabel" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: rgba(255,255,255,0.7);" text="Level #" wrappingWidth="336.16015625" HBox.hgrow="ALWAYS">
+                  <Text fx:id="levelLabel" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: rgba(255,255,255,0.7);" text="Level #" wrappingWidth="321.16015625" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
                      </font>
@@ -27,7 +27,7 @@
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Text>
-                  <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="139.0" style="-fx-background-color: rgba(255,255,255,0.7);" HBox.hgrow="ALWAYS">
+                  <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="142.0" style="-fx-background-color: rgba(255,255,255,0.7);" HBox.hgrow="ALWAYS">
                      <children>
                         <Label fx:id="statisticsLabel" alignment="CENTER" text="Stats" VBox.vgrow="ALWAYS">
                            <VBox.margin>
@@ -95,12 +95,15 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.8);" VBox.vgrow="ALWAYS">
                <children>
                   <TextArea fx:id="outputTextArea" prefHeight="200.0" prefWidth="200.0" stylesheets="@assets/transparentTextArea.css" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
-                     </font></TextArea>
+                     </font>
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin></TextArea>
                </children>
             </HBox>
          </children>

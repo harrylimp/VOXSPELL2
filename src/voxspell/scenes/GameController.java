@@ -21,6 +21,10 @@ import java.util.ResourceBundle;
  */
 public class GameController implements Initializable {
 
+    private static final String BASE = "-fx-border-color: rgb(31,65,9); -fx-border-width: 2px; -fx-background-color: #b6e7c9; ";
+    private static final String ON_HOVER = "-fx-background-color: #83B496;";
+    private static final String ON_EXIT = "-fx-background-color: #b6e7c9;";
+
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -99,6 +103,24 @@ public class GameController implements Initializable {
         }
     }
 
+    /**
+     * onHover handler for button styling
+     */
+    class hoverHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            ((Button)event.getSource()).setStyle(BASE + ON_HOVER);
+        }
+    }
+
+    /**
+     * onExit handler for button styling
+     */
+    class leftHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            ((Button)event.getSource()).setStyle(BASE + ON_EXIT);
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -133,6 +155,9 @@ public class GameController implements Initializable {
 
         for (Button button : buttons) {
             button.setOnMouseClicked(new buttonRemoved());
+            button.setStyle("-fx-background-color: #b6e7c9 ; -fx-border-color:black; -fx-border-width:2px; ");
+            button.setOnMouseEntered(new hoverHandler());
+            button.setOnMouseExited(new leftHandler());
         }
 
         pointLabel.setText("Points Available: " + Game.getPoints());

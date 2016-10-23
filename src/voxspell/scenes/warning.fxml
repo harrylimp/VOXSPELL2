@@ -12,18 +12,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="voxspell.scenes.WarningController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="voxspell.scenes.WarningController">
    <children>
-      <VBox fx:id="vBox" prefHeight="150.0" prefWidth="200.0" style=": ;">
+      <VBox fx:id="vBox" prefHeight="200.0" prefWidth="300.0">
          <children>
-            <Label fx:id="warningLabel" prefHeight="91.0" prefWidth="222.0" textAlignment="CENTER" />
-            <HBox prefHeight="42.0" prefWidth="194.0">
+            <Label fx:id="warningLabel" prefHeight="136.0" prefWidth="301.0" style="-fx-background-color: rgba(255,255,255,0.7);" textAlignment="CENTER">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+            <HBox prefHeight="67.0" prefWidth="300.0" style="-fx-background-color: rgba(255,255,255,0.7);">
                <children>
-                  <Button fx:id="yesButton" mnemonicParsing="false" prefHeight="56.0" prefWidth="53.0" style="-fx-background-color: #ffff00; -fx-border-color: #000000; -fx-border-width: 2px;" text="YES" textAlignment="CENTER">
+                  <Button fx:id="yesButton" mnemonicParsing="false" prefHeight="42.0" prefWidth="75.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px;" text="YES" textAlignment="CENTER">
                      <HBox.margin>
-                        <Insets left="20.0" right="50.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="noButton" mnemonicParsing="false" prefHeight="58.0" prefWidth="50.0" style="-fx-background-color: #ffff00; -fx-border-color: #000000; -fx-border-width: 2px;" text="NO" />
+                        <Insets left="50.0" right="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                  <Button fx:id="noButton" mnemonicParsing="false" prefHeight="41.0" prefWidth="75.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px;" text="NO">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
                </children>
             </HBox>
          </children>

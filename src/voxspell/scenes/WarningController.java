@@ -3,6 +3,7 @@ package voxspell.scenes;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,10 +32,11 @@ public class WarningController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        vBox.setBackground(SceneManager.makePopBackground());
+        vBox.setBackground(SceneManager.makeBackground());
         noButton.setOnMouseClicked(new spellingHandler());
         yesButton.setOnMouseClicked(new menuHandler());
         warningLabel.setText("Are you sure?");
+        warningLabel.setAlignment(Pos.CENTER);
 
     }
 

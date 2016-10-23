@@ -204,7 +204,6 @@ public class MainController implements Initializable {
 
         // enable game button
         gameButton.setOnMouseClicked(new gameHandler());
-
     }
 
     public void disable(int maxLevel) {
