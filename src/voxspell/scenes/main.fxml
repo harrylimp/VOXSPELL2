@@ -126,29 +126,7 @@
             </HBox>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="changeListButton" mnemonicParsing="false" text="Change Spelling List">
-                     <HBox.margin>
-                        <Insets right="12.0" />
-                     </HBox.margin>
-                  </Button>
-                  <MenuButton fx:id="voiceMenuButton" mnemonicParsing="false" text="MenuButton">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </MenuButton>
                   <Button fx:id="viewStatsButton" mnemonicParsing="false" style="-fx-background-color: #add8e6;" text="View stats">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: #ff2525;" text="Reset levels">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
@@ -161,14 +139,6 @@
          <children>
             <Button fx:id="gameButton" mnemonicParsing="false" text="BEE" />
             <Button fx:id="settingsButton" mnemonicParsing="false" text="Button" />
-            <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: rgba(211,64,1,0.4);" text="Unlock all levels">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <HBox.margin>
-                  <Insets right="10.0" top="5.0" />
-               </HBox.margin>
-            </Button>
          </children>
       </HBox>
     </children>

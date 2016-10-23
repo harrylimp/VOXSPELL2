@@ -69,15 +69,7 @@ public class MainController implements Initializable {
     @FXML
     private Button level10;
     @FXML
-    private Button resetButton;
-    @FXML
-    private MenuButton voiceMenuButton;
-    @FXML
     private Button viewStatsButton;
-    @FXML
-    private Button unlockAllButton;
-    @FXML
-    private Button changeListButton;
     @FXML
     private Button settingsButton;
     @FXML
@@ -118,29 +110,6 @@ public class MainController implements Initializable {
     }
 
     /**
-     * voice MenuButton handler for voice changing
-     */
-    class voiceMenuButtonHandler implements EventHandler<ActionEvent> {
-        @Override
-        public void handle(ActionEvent actionEvent) {
-            switch((String)((MenuItem)actionEvent.getSource()).getUserData()) { // userData is voice type
-                case Festival.DEFAULT:
-                    LevelData.setVoice(Festival.DEFAULT);
-                    voiceMenuButton.setText(DEFAULT_VOICE_CHOICE);
-                    break;
-                case Festival.NZ:
-                    LevelData.setVoice(Festival.NZ);
-                    voiceMenuButton.setText(NZ_VOICE_CHOICE);
-                    break;
-                default:
-                    LevelData.setVoice(Festival.DEFAULT); // set to default if invalid voice
-                    voiceMenuButton.setText(DEFAULT_VOICE_CHOICE);
-                    break;
-            }
-        }
-    }
-
-    /**
      * onHover handler for button styling
      */
     class hoverHandler implements EventHandler<MouseEvent> {
@@ -158,22 +127,6 @@ public class MainController implements Initializable {
         }
     }
 
-    /**
-     * handler for resetting labels
-     */
-    class resetHandler implements EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            data.delete();
-            disable(1); // disable all levels except the first
-        }
-    }
-
-    class enableAllHandler implements EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            enableAll();
-        }
-    }
-
     class enableSettingsHandler implements  EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
             //popUp();
@@ -187,27 +140,16 @@ public class MainController implements Initializable {
         }
     }
 
-    class fileHandler implements EventHandler<ActionEvent> {
-        public void handle(ActionEvent event) {
-            final FileChooser fileChooser = new FileChooser();
-            Stage stage = (Stage)changeListButton.getScene().getWindow();
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text File", "*.txt"));
-            File file = fileChooser.showOpenDialog(stage);
-            String chosenFile = file.getName();
-            LevelData.setWordlist(chosenFile);
-        }
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         vBox.setBackground(SceneManager.makeBackground());
+
         // create listeners
         EventHandler<MouseEvent> levelSelectionHandler = new levelSelect();
         EventHandler<MouseEvent> hoverHandler = new hoverHandler();
         EventHandler<MouseEvent> exitHandler = new exitHandler();
-        //EventHandler<MouseEvent> resetHandler = new resetHandler();
         EventHandler<MouseEvent> statsSelectHandler = new statsSelectHandler();
-        //EventHandler<MouseEvent> enableAllHandler = new enableAllHandler();
 
         // add buttons to list, then iterate through list assigning listeners
         buttons.add(level1);
@@ -228,6 +170,7 @@ public class MainController implements Initializable {
             button.setOnMouseExited(exitHandler);
         }
 
+        disable(data.highestLevelEnabled());
         if (LevelData.isReset()) {
             disable(1);
             LevelData.setIsReset(false);
@@ -238,27 +181,7 @@ public class MainController implements Initializable {
         }
 
         // initialise buttons
-        //resetButton.setOnMouseClicked(resetHandler);
         viewStatsButton.setOnMouseClicked(statsSelectHandler);
-        //unlockAllButton.setOnMouseClicked(enableAllHandler);
-
-
-        // disable locked levels
-        //disable(data.highestLevelEnabled());
-
-        // initialise voice menu
-        voiceMenuButton.setText("Change voice");
-        EventHandler<ActionEvent> voiceMenuButtonHandler = new voiceMenuButtonHandler();
-        MenuItem defaultVoice = new MenuItem(DEFAULT_VOICE_CHOICE);
-        defaultVoice.setUserData(Festival.DEFAULT);
-        MenuItem nzVoice = new MenuItem(NZ_VOICE_CHOICE);
-        nzVoice.setUserData(Festival.NZ);
-        voiceMenuButton.getItems().setAll(defaultVoice, nzVoice);
-
-        defaultVoice.setOnAction(voiceMenuButtonHandler);
-        nzVoice.setOnAction(voiceMenuButtonHandler);
-
-        changeListButton.setOnAction(new fileHandler());
 
         // enable background music
         File file = new File("./lib/song.mp3");
@@ -278,22 +201,6 @@ public class MainController implements Initializable {
         gameButton.setOnMouseClicked(new gameHandler());
 
     }
-
-    /*public void popUp() {
-        Stage stage;
-        Parent root = null;
-        stage = new Stage();
-
-        try {
-            root = FXMLLoader.load(Voxspell.class.getResource("scenes/" + "settings.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-
-    }*/
 
     public void disable(int maxLevel) {
         for (int i = 9; i > maxLevel - 1; i--) {
