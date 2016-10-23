@@ -30,7 +30,7 @@
                   <Button fx:id="submitButton" mnemonicParsing="false" style="-fx-background-color: #b6e7c9;" text="Submit" />
                </children>
             </HBox>
-            <Label fx:id="output" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" text="Label" />
+            <Label fx:id="output" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" />
          </children>
       </VBox>
    </children>
