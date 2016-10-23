@@ -3,7 +3,10 @@ package voxspell.scenes;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -14,12 +17,14 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import voxspell.Voxspell;
 import voxspell.engine.DataIO;
 import voxspell.engine.Festival;
 import voxspell.engine.LevelData;
 import voxspell.engine.SceneManager;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -78,6 +83,7 @@ public class SettingsController implements Initializable {
     class resetHandler implements EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
             data.delete();
+            popUp("warning.fxml");
             LevelData.setIsReset(true);
             LevelData.setIsEnable(false);
         }
@@ -85,8 +91,7 @@ public class SettingsController implements Initializable {
 
     class enableAllHandler implements EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
-            LevelData.setIsEnable(true);
-            LevelData.setIsReset(false);
+            popUp("unlock.fxml");
         }
     }
 
@@ -105,6 +110,22 @@ public class SettingsController implements Initializable {
             String chosenFile = file.getName();
             LevelData.setWordlist(chosenFile);
         }
+    }
+
+    public void popUp(String destination) {
+        Stage stage;
+        Parent root = null;
+        stage = new Stage();
+
+        try {
+            root = FXMLLoader.load(Voxspell.class.getResource("scenes/" + destination));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     @Override

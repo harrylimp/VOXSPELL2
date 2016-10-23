@@ -91,7 +91,7 @@ public class VideoController implements Initializable {
 
     public void reload(ActionEvent event) {
         mp.seek(mp.getStartTime());
-        mp.stop();
+        mp.play();
     }
 
 }

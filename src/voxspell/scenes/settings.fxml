@@ -13,9 +13,9 @@
     <children>
         <HBox alignment="CENTER">
             <children>
-                <Text fx:id="titleLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                <Text fx:id="titleLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="SETTINGS" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                     <font>
-                        <Font name="Comic Sans MS" size="48.0" />
+                        <Font size="44.0" />
                     </font>
                     <HBox.margin>
                         <Insets top="10.0" />
@@ -23,12 +23,12 @@
                 </Text>
             </children>
         </HBox>
-      <Button fx:id="changeListButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="153.0" text="Change Spelling List" textAlignment="CENTER">
+      <Button fx:id="changeListButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="158.0" style="-fx-background-color: #b6e7c9; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Change Spelling List" textAlignment="CENTER">
          <VBox.margin>
             <Insets bottom="30.0" left="225.0" top="30.0" />
          </VBox.margin>
       </Button>
-      <MenuButton fx:id="voiceMenuButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="MenuButton">
+      <MenuButton fx:id="voiceMenuButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #b6e7c9; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="MenuButton">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -37,7 +37,7 @@
             <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </MenuButton>
-      <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #ff2525;" text="Reset levels">
+      <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Reset levels">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -45,7 +45,7 @@
             <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: rgba(211,64,1,0.4);" text="Unlock all levels">
+      <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Unlock all levels">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -53,7 +53,7 @@
             <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="menuButton" minHeight="30.0" minWidth="153.0" mnemonicParsing="false" text="Main Menu">
+      <Button fx:id="menuButton" minHeight="30.0" minWidth="153.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Main Menu">
          <VBox.margin>
             <Insets left="225.0" />
          </VBox.margin></Button>

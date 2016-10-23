@@ -16,6 +16,7 @@ public class LevelData {
     private static DataIO data = new DataIO();
     private static ArrayList<Word> currentWordList;
     private static String voice = data.getVoice();
+    private static String password = "l1verpool";
     private static String wordlist = "NZCER-spelling-lists.txt";
     private static boolean isReview = false;
     private static boolean isReset = false;
@@ -128,5 +129,13 @@ public class LevelData {
 
     public static void setMusicPlay(boolean music) {
         musicPlay = music;
+    }
+
+    public static boolean checkPassword(String userInput) {
+        if (userInput.equals(password)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

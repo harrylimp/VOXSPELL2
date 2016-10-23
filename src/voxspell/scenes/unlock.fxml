@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="voxspell.scenes.UnlockController">
+   <children>
+      <VBox fx:id="vBox" prefHeight="200.0" prefWidth="300.0">
+         <children>
+            <Label fx:id="warningLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="136.0" prefWidth="301.0" style="-fx-background-color: rgba(255,255,255,0.7);" text="Enter Password:" textAlignment="CENTER">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+            <HBox prefHeight="67.0" prefWidth="300.0" style="-fx-background-color: rgba(255,255,255,0.7);">
+               <children>
+                  <TextField fx:id="inputTextField">
+                     <HBox.margin>
+                        <Insets left="25.0" right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="submitButton" mnemonicParsing="false" style="-fx-background-color: #b6e7c9;" text="Submit" />
+               </children>
+            </HBox>
+            <Label fx:id="output" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" text="Label" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
