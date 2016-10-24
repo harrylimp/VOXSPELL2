@@ -9,8 +9,10 @@ import java.util.List;
 
 /**
  * DesktopApi created by mightypork (http://stackoverflow.com/users/2180189/mightypork)
+ * used in VoxSpell to manage file usage with the linux operating system
  */
 public class DesktopApi {
+
     public static boolean browse(URI uri) {
 
         if (openSystemSpecific(uri.toString())) return true;

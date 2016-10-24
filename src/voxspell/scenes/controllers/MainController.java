@@ -190,7 +190,7 @@ public class MainController implements Initializable {
         gameButton.setOnMouseClicked(new gameHandler());
 
         // enable help button
-        helpButton.setOnMouseClicked(new helpHandler());
+        // helpButton.setOnMouseClicked(new helpHandler());
     }
 
     public void disable(int maxLevel) {
