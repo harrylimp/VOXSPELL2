@@ -14,12 +14,23 @@ import java.io.File;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
+/**
+ * This is the main class used to initially launch the application. This loads the background
+ * music to be played, and loads the "main.fxml" as the first screen to be displayed.
+ */
 public class Voxspell extends Application {
+
+    // Defining the size of the window
     private static int WINDOW_WIDTH = 600;
     private static int WINDOW_HEIGHT = 400;
 
+    /**
+     * Called when launching the application. This is where the stage is set
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        // set the stage as "main.fxml" which is the main menu
         SceneManager.setStage(primaryStage);
         Parent root = FXMLLoader.load(getClass().getResource("scenes/main.fxml"));
         primaryStage.setTitle("VOXSPELL");
@@ -37,6 +48,7 @@ public class Voxspell extends Application {
                 mediaPlayer.seek(Duration.ZERO);
             }
         });
+        // plays on repeat
         mediaPlayer.onRepeatProperty();
 
     }

@@ -11,8 +11,8 @@ import voxspell.Voxspell;
 import java.io.IOException;
 
 /**
- * class with method(s) to change the scene, and manage scene background
- * Created by nhur714 on 22/09/16.
+ * It is a static ('singleton') class with methods used to change the scene,
+ * and manage scene background.
  */
 public class SceneManager {
     private static Stage currentStage;
@@ -24,6 +24,10 @@ public class SceneManager {
         currentStage = stage;
     }
 
+    /**
+     * This is the standard background used throughout the application.
+     * Calling this method sets it to this background.
+     */
     public static Background makeBackground() {
         Image image = new Image(Voxspell.class.getResource("scenes/assets/trees.png").toExternalForm());
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
@@ -32,6 +36,9 @@ public class SceneManager {
         return background;
     }
 
+    /**
+     * This is the background used in the "Finding the Bee" game puzzle.
+     */
     public static Background makeBeeBackground() {
         Image image = new Image(Voxspell.class.getResource("scenes/assets/bee.jpeg").toExternalForm());
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
@@ -40,14 +47,10 @@ public class SceneManager {
         return background;
     }
 
-    public static Background makePopBackground() {
-        Image image = new Image(Voxspell.class.getResource("scenes/assets/allGrass.jpeg").toExternalForm());
-        BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, false, true);
-        BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
-        Background background = new Background(backgroundImage);
-        return background;
-    }
-
+    /**
+     * By specifying the fxmlDestination that you want to go to, the goTo method will
+     * set the stage to the new stage defined by the destination.
+     */
     public static void goTo(String fxmlDestination) {
         if (currentStage != null) {
             Stage stage;

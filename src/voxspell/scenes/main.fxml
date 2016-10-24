@@ -130,7 +130,7 @@
                 </HBox>
             </children>
         </VBox>
-        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 4px; -fx-border-radius: 1px;" text="HELP">
+        <Button fx:id="helpButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 4px; -fx-border-radius: 1px;" text="HELP">
             <VBox.margin>
                 <Insets bottom="5.0" left="5.0" />
             </VBox.margin>

@@ -6,9 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 import voxspell.engine.DataIO;
 import voxspell.engine.DesktopApi;
 import voxspell.engine.LevelData;
@@ -23,6 +20,8 @@ import java.util.ResourceBundle;
  * MainController class for the application entry / level selection screen (main.fxml)
  */
 public class MainController implements Initializable {
+
+    // static fields that store the settings and colours of the level buttons
     private static final String BASE = "-fx-border-color: rgb(31,65,9); -fx-border-width: 5px; -fx-border-radius: 1px; -fx-background-color: #b6e7c9; ";
     private static final String ON_HOVER = "-fx-background-color: #83B496;";
     private static final String ON_EXIT = "-fx-background-color: #b6e7c9;";
@@ -68,8 +67,6 @@ public class MainController implements Initializable {
 
     /**
      * parse button text into level number
-     * @param text
-     * @return level
      */
     private int getLevelNumber(String text) {
         String number = text.substring(text.length() - 1);
@@ -91,6 +88,39 @@ public class MainController implements Initializable {
         }
     }
 
+    /**
+     * settings handler which changes the stage to the "settings.fxml"
+     */
+    class enableSettingsHandler implements  EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            SceneManager.goTo("settings.fxml");
+        }
+    }
+
+    /**
+     * game handler which changes the stage to the "game.fxml"
+     */
+    class gameHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            SceneManager.goTo("game.fxml");
+        }
+    }
+
+    /**
+     * help handler which opens up the README.md file
+     */
+    class helpHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+
+            // open up the readme for the user to get help
+            try {
+                DesktopApi.open(new File("README.md"));
+            }
+            catch (Exception e){
+                // do nothing
+            }
+        }
+    }
     /**
      * handle change to stats scene
      */
@@ -118,27 +148,31 @@ public class MainController implements Initializable {
         }
     }
 
-    class enableSettingsHandler implements  EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            SceneManager.goTo("settings.fxml");
+    /**
+     * disables all the levels that are higher than the specified maxLevel
+     */
+    public void disable(int maxLevel) {
+        for (int i = 9; i > maxLevel - 1; i--) {
+            buttons.get(i).setDisable(true);
         }
     }
 
-    class gameHandler implements EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            SceneManager.goTo("game.fxml");
+    /**
+     * enables all ten levels
+     */
+    public void enableAll() {
+        for (int i = 0; i < 10; i++) {
+            buttons.get(i).setDisable(false);
         }
     }
 
-    class helpHandler implements EventHandler<MouseEvent> {
-        public void handle(MouseEvent event) {
-            DesktopApi.open(new File("README.md"));
-        }
-    }
-
+    /**
+     * Initializes the main menu stage
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // set the background
         vBox.setBackground(SceneManager.makeBackground());
 
         // create listeners
@@ -159,6 +193,7 @@ public class MainController implements Initializable {
         buttons.add(level9);
         buttons.add(level10);
 
+        // set the event handlers for each of the buttons
         for (Button button : buttons) {
             button.setStyle(BASE);
             button.setOnMouseClicked(levelSelectionHandler);
@@ -166,38 +201,26 @@ public class MainController implements Initializable {
             button.setOnMouseExited(exitHandler);
         }
 
+        // disable all the levels the user has not yet reached
         disable(data.highestLevelEnabled());
+
+        // if the user has asked to reset the levels, disable all but level 1
         if (LevelData.isReset()) {
             disable(1);
             LevelData.setIsReset(false);
         }
+
+        // if the user has asked to unlock all levels, enable all ten levels
         if (LevelData.isEnable()) {
             enableAll();
             LevelData.setIsEnable(false);
         }
 
-        // initialise buttons
+        // add event handlers for each button
         viewStatsButton.setOnMouseClicked(statsSelectHandler);
-
-        // enable settings button
         settingsButton.setOnMouseClicked(new enableSettingsHandler());
-
-        // enable game button
         gameButton.setOnMouseClicked(new gameHandler());
-
-        // enable help button
-        // helpButton.setOnMouseClicked(new helpHandler());
+        helpButton.setOnMouseClicked(new helpHandler());
     }
 
-    public void disable(int maxLevel) {
-        for (int i = 9; i > maxLevel - 1; i--) {
-            buttons.get(i).setDisable(true);
-        }
-    }
-
-    public void enableAll() {
-        for (int i = 0; i < 10; i++) {
-            buttons.get(i).setDisable(false);
-        }
-    }
 }
