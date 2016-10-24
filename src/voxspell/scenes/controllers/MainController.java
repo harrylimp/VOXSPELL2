@@ -6,9 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 import voxspell.engine.DataIO;
 import voxspell.engine.DesktopApi;
 import voxspell.engine.LevelData;
@@ -190,7 +187,7 @@ public class MainController implements Initializable {
         gameButton.setOnMouseClicked(new gameHandler());
 
         // enable help button
-        // helpButton.setOnMouseClicked(new helpHandler());
+        helpButton.setOnMouseClicked(new helpHandler());
     }
 
     public void disable(int maxLevel) {
