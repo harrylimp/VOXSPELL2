@@ -37,7 +37,7 @@
             <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </MenuButton>
-      <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Reset levels">
+      <Button fx:id="resetButton" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #ff9900; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Reset levels">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -45,7 +45,7 @@
             <Insets bottom="30.0" left="225.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Unlock all levels">
+      <Button fx:id="unlockAllButton" alignment="CENTER" prefHeight="30.0" prefWidth="158.0" style="-fx-background-color: #ff9900; -fx-border-color: #000000; -fx-border-width: 3px; -fx-border-radius: 1px;" text="Unlock all levels">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

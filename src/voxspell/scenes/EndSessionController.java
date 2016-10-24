@@ -179,8 +179,8 @@ public class EndSessionController implements Initializable {
 
         applyCustomColorSequence(
                 list,
-                "limegreen",
-                "tomato"
+                "lightblue",
+                "orange"
         );
         
     }
@@ -219,9 +219,9 @@ public class EndSessionController implements Initializable {
             if (item != null) {
                 setText(item);
                 if (correctList.contains(item)) {
-                    setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+                    setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
                 } else {
-                    setBackground(new Background(new BackgroundFill(Color.TOMATO, CornerRadii.EMPTY, Insets.EMPTY)));
+                    setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
                 }
             }
         }

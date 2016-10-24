@@ -22,14 +22,14 @@
                </font></Label>
             <HBox prefHeight="67.0" prefWidth="300.0" style="-fx-background-color: rgba(255,255,255,0.7);">
                <children>
-                  <Button fx:id="yesButton" mnemonicParsing="false" prefHeight="42.0" prefWidth="75.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px;" text="YES" textAlignment="CENTER">
+                  <Button fx:id="yesButton" mnemonicParsing="false" prefHeight="42.0" prefWidth="75.0" style="-fx-background-color: #ff9900; -fx-border-color: #000000; -fx-border-width: 3px;" text="YES" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="50.0" right="50.0" />
                      </HBox.margin>
                      <font>
                         <Font size="20.0" />
                      </font></Button>
-                  <Button fx:id="noButton" mnemonicParsing="false" prefHeight="41.0" prefWidth="75.0" style="-fx-background-color: #ffff1a; -fx-border-color: #000000; -fx-border-width: 3px;" text="NO">
+                  <Button fx:id="noButton" mnemonicParsing="false" prefHeight="41.0" prefWidth="75.0" style="-fx-background-color: #ff9900; -fx-border-color: #000000; -fx-border-width: 3px;" text="NO">
                      <font>
                         <Font size="20.0" />
                      </font></Button>
