@@ -10,6 +10,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import voxspell.engine.DataIO;
+import voxspell.engine.DesktopApi;
 import voxspell.engine.LevelData;
 import voxspell.engine.SceneManager;
 
@@ -129,6 +130,12 @@ public class MainController implements Initializable {
         }
     }
 
+    class helpHandler implements EventHandler<MouseEvent> {
+        public void handle(MouseEvent event) {
+            DesktopApi.open(new File("README.md"));
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -195,7 +202,7 @@ public class MainController implements Initializable {
         gameButton.setOnMouseClicked(new gameHandler());
 
         // enable help button
-        helpButton.setOnMouseClicked(new gameHandler());
+        // helpButton.setOnMouseClicked(new helpHandler());
     }
 
     public void disable(int maxLevel) {

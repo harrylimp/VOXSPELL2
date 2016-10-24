@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Static ('singleton') class to store global application state
  *
  * Created by nhur714 on 16/09/16.
+ * Modefied by harrylimp.
  */
 
 /**
@@ -24,6 +25,19 @@ public class LevelData {
     private static boolean musicPlay = true;
 
     /**
+     * checks if the password is true
+     */
+    public static boolean checkPassword(String userInput) {
+        if (userInput.equals(password)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Getters and setters for all the fields to follow below
+
+    /**
      * set currentWordList
      */
     public static void setCurrentWordList(ArrayList<Word> words) {
@@ -39,7 +53,6 @@ public class LevelData {
 
     /**
      * set current session's selected level
-     * @param number
      */
     public static void setLevel(int number) {
         level = number;
@@ -47,7 +60,6 @@ public class LevelData {
 
     /**
      * get current session's selected level
-     * @return
      */
     public static int getLevel() {
         return level;
@@ -55,7 +67,6 @@ public class LevelData {
 
     /**
      * gets maximum unlocked level from file
-     * @return
      */
     public static int getMaxEnabledLevel() {
         return data.highestLevelEnabled();
@@ -78,8 +89,6 @@ public class LevelData {
 
     /**
      * Get words that have been faulted/failed right after a quiz
-     * @param level
-     * @return
      */
     public static ArrayList<Word> getReviewWords(int level) {
         ArrayList<Word> wordList = new ArrayList<Word>();
@@ -91,51 +100,74 @@ public class LevelData {
         return wordList;
     }
 
+    /**
+     * gets the current wordlist
+     */
     public static String getWordlist() {
         return wordlist;
     }
 
+    /**
+     * sets the current wordlist
+     */
     public static void setWordlist(String newList) {
         wordlist = newList;
     }
 
+    /**
+     * gets whether it is in review mode
+     */
     public static boolean isReview() {
         return isReview;
     }
 
+    /**
+     * sets whether it is in review mode
+     */
     public static void setIsReview(boolean isReview) {
         LevelData.isReview = isReview;
     }
 
+    /**
+     * gets whether levels should be reset
+     */
     public static boolean isReset() {
         return isReset;
     }
 
+    /**
+     * sets whether levels should be reset
+     */
     public static void setIsReset(boolean isReset) {
         LevelData.isReset = isReset;
     }
 
+    /**
+     * gets whether all levels should be enabled
+     */
     public static boolean isEnable() {
         return isEnable;
     }
 
+    /**
+     * sets whether all levels should be enabled
+     */
     public static void setIsEnable(boolean isReset) {
         LevelData.isEnable = isReset;
     }
 
+    /**
+     * gets whether the music should play
+     */
     public static boolean isMusicPlay() {
         return musicPlay;
     }
 
+    /**
+     * sets whether the music should play
+     */
     public static void setMusicPlay(boolean music) {
         musicPlay = music;
     }
 
-    public static boolean checkPassword(String userInput) {
-        if (userInput.equals(password)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
