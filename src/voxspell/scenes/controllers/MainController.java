@@ -1,4 +1,4 @@
-package voxspell.scenes;
+package voxspell.scenes.controllers;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -132,7 +132,11 @@ public class MainController implements Initializable {
 
     class helpHandler implements EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
-            DesktopApi.open(new File("README.md"));
+            try {
+                DesktopApi.open(new File("README.md"));
+            } catch (Exception e) {
+                // do nothing
+            }
         }
     }
 
@@ -186,7 +190,7 @@ public class MainController implements Initializable {
         gameButton.setOnMouseClicked(new gameHandler());
 
         // enable help button
-        // helpButton.setOnMouseClicked(new helpHandler());
+        helpButton.setOnMouseClicked(new helpHandler());
     }
 
     public void disable(int maxLevel) {

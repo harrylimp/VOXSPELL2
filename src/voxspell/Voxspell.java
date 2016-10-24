@@ -21,7 +21,7 @@ public class Voxspell extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         SceneManager.setStage(primaryStage);
-        Parent root = FXMLLoader.load(getClass().getResource("scenes/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("scenes/fxmls/main.fxml"));
         primaryStage.setTitle("VOXSPELL");
         primaryStage.setScene(new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT));
         primaryStage.show();
