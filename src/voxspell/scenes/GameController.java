@@ -3,13 +3,11 @@ package voxspell.scenes;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import voxspell.engine.Game;
-import voxspell.engine.LevelData;
 import voxspell.engine.SceneManager;
 
 import java.net.URL;

@@ -293,7 +293,6 @@ public class SpellingController implements Initializable {
             currentWord = words.get(index + 1);
             readWord(currentWord);
         } else {
-            // TODO: finished, GO TO NEXT LEVEL
             // enable next level
             if (Integer.parseInt(rightLabel.getText()) >= 9 && LevelData.getLevel() < 10) {
                 data.enableLevel(LevelData.getLevel() + 1);

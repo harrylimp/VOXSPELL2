@@ -1,7 +1,5 @@
 package voxspell.scenes;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -49,17 +47,6 @@ public class VideoController implements Initializable {
 
 
         exitButton.setOnMouseClicked(new VideoController.returnHandler());
-
-        /*(Image image1 = new Image(getClass().getResourceAsStream("assets/playPic.png"));
-        playButton.setGraphic(new ImageView(image1));
-        Image image2 = new Image(getClass().getResourceAsStream("assets/pausePic.png"));
-        pauseButton.setGraphic(new ImageView(image2));
-        Image image3 = new Image(getClass().getResourceAsStream("assets/fastPic.png"));
-        fastforwardButton.setGraphic(new ImageView(image3));
-        Image image4 = new Image(getClass().getResourceAsStream("assets/backPic.png"));
-        slowdownButton.setGraphic(new ImageView(image4));
-        Image image5 = new Image(getClass().getResourceAsStream("assets/reloadPic.png"));
-        reloadButton.setGraphic(new ImageView(image5));*/
 
     }
 

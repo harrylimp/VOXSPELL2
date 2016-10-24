@@ -1,31 +1,19 @@
 package voxspell.scenes;
 
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.Duration;
-import voxspell.Voxspell;
 import voxspell.engine.DataIO;
-import voxspell.engine.Festival;
 import voxspell.engine.LevelData;
 import voxspell.engine.SceneManager;
 
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -74,6 +62,8 @@ public class MainController implements Initializable {
     private Button settingsButton;
     @FXML
     private Button gameButton;
+    @FXML
+    private Button helpButton;
 
     /**
      * parse button text into level number
@@ -129,7 +119,6 @@ public class MainController implements Initializable {
 
     class enableSettingsHandler implements  EventHandler<MouseEvent> {
         public void handle(MouseEvent event) {
-            //popUp();
             SceneManager.goTo("settings.fxml");
         }
     }
@@ -204,6 +193,9 @@ public class MainController implements Initializable {
 
         // enable game button
         gameButton.setOnMouseClicked(new gameHandler());
+
+        // enable help button
+        helpButton.setOnMouseClicked(new gameHandler());
     }
 
     public void disable(int maxLevel) {

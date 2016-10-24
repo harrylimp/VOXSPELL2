@@ -23,112 +23,117 @@
                 </Text>
             </children>
         </HBox>
-      <VBox alignment="CENTER" prefHeight="285.0" prefWidth="600.0">
-         <children>
-            <HBox alignment="CENTER">
-               <children>
-                      <GridPane alignment="CENTER" layoutX="100.0" layoutY="57.0" prefHeight="307.0" prefWidth="400.0">
-                          <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints vgrow="SOMETIMES" />
-                              <RowConstraints vgrow="SOMETIMES" />
-                              <RowConstraints vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                          <children>
-                              <Button fx:id="level1" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9; -fx-border-color: rgb(31,65,9); -fx-border-width: 5px; -fx-border-radius: 1px;" text="LEVEL 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                              <Button fx:id="level2" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <font>
-                              <Font name="Comic Sans MS" size="13.0" />
-                           </font>
-                        </Button>
-                              <Button fx:id="level4" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                              <Button fx:id="level5" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                              <Button fx:id="level3" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                              <Button fx:id="level6" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                              <Button fx:id="level8" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                              <Button fx:id="level7" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                              <Button fx:id="level9" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                  <font>
-                                      <Font name="Comic Sans MS" size="13.0" />
-                                  </font>
-                        </Button>
-                            <Button fx:id="level10" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 10" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                                <font>
-                                    <Font name="Comic Sans MS" size="13.0" />
-                                </font>
-                        </Button>
-                        <Button fx:id="viewStatsButton" minHeight="27.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 5px; -fx-border-radius: 1px;" text="VIEW STATS" GridPane.rowIndex="4" />
-                        <Button fx:id="gameButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #ff9900; -fx-border-color: #000000; -fx-border-width: 5px; -fx-border-radius: 1px;" text="PUZZLE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Button fx:id="settingsButton" minHeight="27.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 5px;" text="SETTINGS" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                          </children>
-                     <HBox.margin>
-                        <Insets top="25.0" />
-                     </HBox.margin>
-                      </GridPane>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+        <VBox alignment="CENTER" prefHeight="285.0" prefWidth="600.0">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <GridPane alignment="CENTER" layoutX="100.0" layoutY="57.0" prefHeight="307.0" prefWidth="400.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button fx:id="level1" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9; -fx-border-color: rgb(31,65,9); -fx-border-width: 5px; -fx-border-radius: 1px;" text="LEVEL 1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="level2" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level4" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level5" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level3" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level6" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level8" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level7" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 7" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level9" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="level10" alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #b6e7c9;" text="LEVEL 10" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font name="Comic Sans MS" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="viewStatsButton" minHeight="27.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 5px; -fx-border-radius: 1px;" text="VIEW STATS" GridPane.rowIndex="4" />
+                                <Button fx:id="gameButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: #ff9900; -fx-border-color: #000000; -fx-border-width: 5px; -fx-border-radius: 1px;" text="PUZZLE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Button fx:id="settingsButton" minHeight="27.0" minWidth="100.0" mnemonicParsing="false" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 5px;" text="SETTINGS" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                            </children>
+                            <HBox.margin>
+                                <Insets top="25.0" />
+                            </HBox.margin>
+                        </GridPane>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #add8e6; -fx-border-color: #000000; -fx-border-width: 4px; -fx-border-radius: 1px;" text="HELP">
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" />
+            </VBox.margin>
+        </Button>
     </children>
 </VBox>

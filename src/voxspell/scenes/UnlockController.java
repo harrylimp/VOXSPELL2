@@ -8,14 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import voxspell.engine.LevelData;
-import voxspell.engine.SceneManager;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
