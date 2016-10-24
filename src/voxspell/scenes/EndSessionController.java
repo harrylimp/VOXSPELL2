@@ -60,11 +60,15 @@ public class EndSessionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // set the background to the nature theme
         anchorPane.setBackground(SceneManager.makeBackground());
 
+        // check whether the session was in review mode - if so change the button text
         if (LevelData.isReview()) {
             reviewButton.setText("Review again");
         }
+
+        // check how many words were correct or incorrect in the session
         ArrayList<Word> currentWords = LevelData.getCurrentWordList();
         correct = 0;
         incorrect = 0;
@@ -75,17 +79,20 @@ public class EndSessionController implements Initializable {
                 incorrect++;
             }
         }
+
+        // set the handlers when the buttons are clicked
         returnButton.setOnMouseClicked(new returnHandler());
         viewStatsButton.setOnMouseClicked(new statsHandler());
         retryLevelButton.setOnMouseClicked(new retryLevelHandler());
 
+        // only enable the review button if there is more than one word incorrect
         if (incorrect > 0) {
             reviewButton.setOnMouseClicked(new reviewHandler());
         } else {
             reviewButton.setDisable(true);
         }
 
-        // enable next stuff
+        // enable the video and next player buttons depending on the session
         if (correct >= 9 && !LevelData.isReview() || currentWords.size() == 1 && LevelData.isReview()) {
             // only enable reward/next level if original quiz was 9/10 and they reviewed 1 word only (or no review)
             playVideoButton.setOnMouseClicked(new videoHandler());
@@ -99,6 +106,8 @@ public class EndSessionController implements Initializable {
             nextLevelButton.setDisable(true);
             playVideoButton.setVisible(false);
         }
+
+        // update everything on the pie chart
         displayText();
         LevelData.setIsReview(false);
         showPieChart();

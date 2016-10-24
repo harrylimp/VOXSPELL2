@@ -219,22 +219,26 @@ public class SpellingController implements Initializable {
                 incrementLabel(rightLabel);
                 Game.addPoints(5*LevelData.getLevel());
                 nextWord();
+                Sound.playSoundEffect("correct.mp3");
             } else if (correct && currentFaulted) {
                 currentWord.incrementFaulted();
                 output("That's right!");
                 currentFaulted = false;
                 Game.addPoints(2*LevelData.getLevel());
                 nextWord();
+                Sound.playSoundEffect("correct.mp3");
             } else if (!correct && !currentFaulted) {
                 currentFaulted = true;
                 output("That's wrong. Try again");
                 incrementLabel(wrongLabel); // wrong as soon as faulted
                 readWord(currentWord);
+                Sound.playSoundEffect("incorrect.mp3");
             } else { // !correct && currentFaulted
                 currentWord.incrementFailed();
                 output("That's wrong. The word was\n" + "\"" + currentWord + "\"");
                 currentFaulted = false;
                 nextWord();
+                Sound.playSoundEffect("incorrect.mp3");
             }
 
         } else {

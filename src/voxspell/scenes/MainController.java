@@ -179,22 +179,6 @@ public class MainController implements Initializable {
         // initialise buttons
         viewStatsButton.setOnMouseClicked(statsSelectHandler);
 
-        // enable background music
-        if (LevelData.isMusicPlay()) {
-            File file = new File("./lib/song.mp3");
-            Media musicFile = new Media(file.toURI().toString());
-            MediaPlayer mediaPlayer = new MediaPlayer(musicFile);
-            mediaPlayer.setAutoPlay(true);
-            mediaPlayer.setVolume(0.30);
-            mediaPlayer.setOnEndOfMedia(new Runnable() {
-                public void run() {
-                    mediaPlayer.seek(Duration.ZERO);
-                }
-            });
-            mediaPlayer.onRepeatProperty();
-            LevelData.setMusicPlay(false);
-        }
-
         // enable settings button
         settingsButton.setOnMouseClicked(new enableSettingsHandler());
 

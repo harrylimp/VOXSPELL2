@@ -22,7 +22,6 @@ public class LevelData {
     private static boolean isReview = false;
     private static boolean isReset = false;
     private static boolean isEnable = false;
-    private static boolean musicPlay = true;
 
     /**
      * checks if the password is true
@@ -154,20 +153,6 @@ public class LevelData {
      */
     public static void setIsEnable(boolean isReset) {
         LevelData.isEnable = isReset;
-    }
-
-    /**
-     * gets whether the music should play
-     */
-    public static boolean isMusicPlay() {
-        return musicPlay;
-    }
-
-    /**
-     * sets whether the music should play
-     */
-    public static void setMusicPlay(boolean music) {
-        musicPlay = music;
     }
 
 }
